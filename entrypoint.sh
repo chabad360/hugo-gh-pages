@@ -2,6 +2,9 @@
 
 set -e
 
+echo "Generating site"
+hugo "$@"
+
 echo "Setting up git"
 [ -z "${GITHUB_TOKEN}" ] && \
   (echo "ERROR: Missing GITHUB_TOKEN." ; exit 1)
@@ -9,30 +12,20 @@ git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 echo "machine github.com login ${GITHUB_ACTOR} password ${GITHUB_TOKEN}" > ~/.netrc
 
-echo "Deleting old publication"
-rm -rf public
-mkdir public
-git worktree prune
-rm -rf .git/worktrees/public/
+echo "cloning"
+git clone --depth=1 --single-branch --branch gh-pages https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git /tmp/gh-pages
 
-echo "Checking out gh-pages branch into public"
-git worktree add -B gh-pages public origin/gh-pages
+echo "copying"
+rm -rf /tmp/gh-pages/*
+cp -av public/* /tmp/gh-pages/
 
-echo "Removing existing files"
-rm -rf public/*
-
-echo "Generating site"
-hugo "$@"
-
-echo "Updating gh-pages branch"
-cd public && git add --all && git commit --allow-empty -am "Publishing to gh-pages (mattbailey/actions-hugo)."
-cd ..
-git push origin gh-pages
-
-echo "Triggering second commit (for some gh-pages builds, two commits are required)."
-cd public
-date -u > last_deploy.txt
-git add last_deploy.txt
-git commit -am "Second commit trigger for gh-pages bug."
+echo "commit & push"
+cd /tmp/gh-pages
+git add -A && git commit --allow-empty -am "Publishing from mattbailey/actions-hugo ${GITHUB_SHA}"
 git push
-cd ..
+
+#echo "Triggering second commit (for some gh-pages builds, two commits are required)."
+#date -u > last_deploy.txt
+#git add last_deploy.txt
+#git commit -am "Publishing from mattbailey/actions-hugo ${GITHUB_SHA}"
+#git push
