@@ -19,13 +19,6 @@ RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/s
       apk add *.apk && \
       rm -rf ./*
 
-# hugo
-RUN wget https://github.com/gohugoio/hugo/releases/download/v${hugo-version}/hugo_extended_${hugo-version}_Linux-64bit.tar.gz && \
-      tar zxvf hugo_extended_${hugo-version}_Linux-64bit.tar.gz && \
-      chmod +x hugo && \
-      mv hugo /usr/bin/hugo &&  \
-      rm -rf ./*
-
 LABEL "com.github.actions.name"="Hugo gh-pages action"
 LABEL "com.github.actions.description"="GitHub Actions for building with hugo and pushing to gh-pages"
 LABEL "com.github.actions.icon"="package"
