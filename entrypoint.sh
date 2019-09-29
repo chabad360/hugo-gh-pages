@@ -2,17 +2,6 @@
 
 set -e
 
-echo "Installing Hugo"
-[ -z "${HUGO_VERSION}" ] && \
-  (HUGO_VERSION="0.58.3")
-
-# hugo
-curl -LO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz"
-tar zxvf hugo*.tar.gz && \
-  chmod +x hugo && \
-  mv hugo /usr/bin/hugo &&  \
-  rm -rf ./*
-
 echo "Generating site"
 hugo "$@"
 
