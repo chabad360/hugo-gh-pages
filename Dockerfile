@@ -3,10 +3,10 @@ FROM registry.gitlab.com/pages/hugo/hugo_extended:latest
 RUN apk add --update --no-cache ca-certificates openssl git && \
   rm -rf /var/cache/apk/*
 
-LABEL "com.github.actions.name"="Hugo gh-pages action"
-LABEL "com.github.actions.description"="GitHub Actions for building with hugo and pushing to gh-pages"
-LABEL "com.github.actions.icon"="package"
-LABEL "com.github.actions.color"="green"
+LABEL "com.github.actions.name"="Hugo to GH Pages"
+LABEL "com.github.actions.description"="GitHub Action for Build Hugo Site and Pushing it to Github Pages"
+LABEL "com.github.actions.icon"="upload-cloud"
+LABEL "com.github.actions.color"="pink"
 
 LABEL "repository"="https://github.com/chabad360/actions-hugo"
 LABEL "homepage"="https://github.com/chabad360/actions-hugo"
