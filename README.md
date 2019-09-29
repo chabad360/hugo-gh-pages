@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-18.04
     
     steps:
-    - name: Checkout
+    - name: Checkout Repo
       uses: actions/checkout@master
       with:
         submodules: true
