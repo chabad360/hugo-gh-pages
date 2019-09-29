@@ -1,8 +1,7 @@
 FROM registry.gitlab.com/pages/hugo/hugo_extended:latest
 
-RUN apk add --update --no-cache libc6-compat libstdc++ && \
-  rm -rf /var/cache/apk/* ;; \
-
+RUN apk add --update --no-cache ca-certificates openssl git && \
+  rm -rf /var/cache/apk/*
 
 LABEL "com.github.actions.name"="Hugo gh-pages action"
 LABEL "com.github.actions.description"="GitHub Actions for building with hugo and pushing to gh-pages"
