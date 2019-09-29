@@ -6,7 +6,7 @@ RUN apk add --update --no-cache ca-certificates openssl git && \
 LABEL "com.github.actions.name"="Hugo to GH Pages"
 LABEL "com.github.actions.description"="GitHub Action for Build Hugo Site and Pushing it to Github Pages"
 LABEL "com.github.actions.icon"="upload-cloud"
-LABEL "com.github.actions.color"="pink"
+LABEL "com.github.actions.color"="red"
 
 LABEL "repository"="https://github.com/chabad360/actions-hugo"
 LABEL "homepage"="https://github.com/chabad360/actions-hugo"
