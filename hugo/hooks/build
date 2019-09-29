@@ -1,5 +1,0 @@
-#!/bin/sh
-
-version=$(echo $DOCKER_TAG | tr -d v)
-
-docker build --build-arg hugo_version=$version -t $IMAGE_NAME .
