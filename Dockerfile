@@ -1,4 +1,4 @@
-FROM chabad360/hugo:latest
+FROM registry.gitlab.com/pages/hugo/hugo_extended:latest
 
 LABEL "com.github.actions.name"="Hugo gh-pages action"
 LABEL "com.github.actions.description"="GitHub Actions for building with hugo and pushing to gh-pages"
