@@ -3,10 +3,12 @@
 set -e
 
 echo "Installing Hugo"
-# hugo
-wget "https://github.com/gohugoio/hugo/releases/download/v${hugo-version}/hugo_extended_${hugo-version}_Linux-64bit.tar.gz"
+[ -z "${HUGO_VERSION}" ] && \
+  (HUGO_VERSION="0.58.3")
 
-tar zxvf hugo_extended_${hugo-version}_Linux-64bit.tar.gz && \
+# hugo
+curl -LO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz"
+tar zxvf hugo*.tar.gz && \
   chmod +x hugo && \
   mv hugo /usr/bin/hugo &&  \
   rm -rf ./*
