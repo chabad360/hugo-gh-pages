@@ -1,9 +1,5 @@
 FROM alpine:3.10
 
-ARG hugo-version
-
-WORKDIR /tmp
-
 # Deps
 RUN apk add --no-cache \
       libstdc++ \
