@@ -1,5 +1,7 @@
 FROM alpine:3.10
 
+WORKDIR /tmp
+
 # Deps
 RUN apk add --no-cache \
       libstdc++ \
