@@ -25,7 +25,7 @@ jobs:
         submodules: true
         
     - name: Publish Site
-      uses: chabad360/actions-hugo@master
+      uses: chabad360/hugo-to-gh-pages@master
       with:
         args: --gc --minify --cleanDestinationDir
       env:
