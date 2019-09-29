@@ -24,6 +24,10 @@ cp -av public/* /tmp/gh-pages/
 
 echo "commit & push"
 cd /tmp/gh-pages
+
+[ "${CNAME}" ] && \
+  echo "${CNAME}" > CNAME
+
 git add -A && git commit --allow-empty -am "Publishing Site at ${GITHUB_SHA} Time: $(date -u)"
 git push --force
 
