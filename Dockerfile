@@ -1,6 +1,6 @@
 FROM registry.gitlab.com/pages/hugo/hugo_extended:latest
 
-RUN apk add --update --no-cache ca-certificates openssl git py3-pygments && \
+RUN apk add --update --no-cache ca-certificates openssl git py-pygments && \
   rm -rf /var/cache/apk/*
 
 LABEL "com.github.actions.name"="Hugo to GH Pages"
