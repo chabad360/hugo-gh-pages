@@ -2,6 +2,9 @@
 
 set -e
 
+hugo version
+pygmentize
+
 echo "Generating Site"
 hugo "$@"
 
