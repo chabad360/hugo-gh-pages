@@ -17,16 +17,16 @@ fi
 [ -z "${BRANCH}" ] && \
   BRANCH=gh-pages
 
-echo -e "\n${BOLD}Versions${PLAIN}"
-echo -ne "\n${BOLD}Hugo:${PLAIN}"
+echo -e "\n${BOLD}Versions:${PLAIN}"
+echo -ne "${BOLD}Hugo: ${PLAIN}"
 hugo version
-echo -ne "\n${BOLD}Pygments:${PLAIN}"
+echo -ne "${BOLD}Pygments: ${PLAIN}"
 pygmentize -V
-echo -ne "\n${BOLD}Asciidoctor:${PLAIN}"
+echo -ne "${BOLD}Asciidoctor: ${PLAIN}"
 asciidoctor --version
-echo -ne "\n${BOLD}PostCSS:${PLAIN}"
+echo -ne "${BOLD}PostCSS: ${PLAIN}"
 postcss --version
-echo -ne "\n${BOLD}Pandoc:${PLAIN}"
+echo -ne "${BOLD}Pandoc: ${PLAIN}"
 pandoc -v
 
 echo -e "\n${BOLD}Generating Site ${NAME} at commit ${GITHUB_SHA}${PLAIN}"

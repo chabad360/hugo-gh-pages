@@ -4,7 +4,7 @@ RUN apk add --update --no-cache ca-certificates openssl git && \
   rm -rf /var/cache/apk/*
 
 # Hugo External Dependecies (add py3-rst once its out of testing)
-RUN apk add --update --no-cache py-pygments asciidoctor npm && \
+RUN apk add --update --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing py-pygments asciidoctor npm py3-rst && \
   rm -rf /var/cache/apk/*
 
 RUN npm install -g postcss-cli

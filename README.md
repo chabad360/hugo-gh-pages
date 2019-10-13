@@ -1,11 +1,23 @@
+<img width=400 alt="Image Credit: Peaceiris" src="https://raw.githubusercontent.com/peaceiris/actions-hugo/master/images/ogp.svg?sanitize=true" />
+<p style="font-size: 12px;" >Image Credit: <a href="https://github.com/peaceiris">Peaceiris</a></p>
+
 # Build and Publish your Hugo Site to Github Pages
 
 - [gohugoio/hugo: The world’s fastest framework for building websites.](https://github.com/gohugoio/hugo)
 
 This Action builds your Hugo Site (using the latest Hugo Extended) and pushes it to Github Pages.
 
-This action also contains support for sites that use Pygments for code highlighting, or use reStructuredText or asciidoc as the document format.
-If your site requires the use of another externel helper, submit an issue and I'll try to add it (it needs to be supported by Alpine Linux).
+This action also contains support for several Hugo Helpers:
+
+| Name | Support |
+| ---- | ------- |
+| reStructuredText | ✓ |
+| Pandoc | ✓ |
+| Asciidoctor | ✓ |
+| PostCSS | ✓ |
+| Pygments | ✓ |
+
+If your site requires the use of another externel helper, submit an issue and I'll try to add it.
 
 ## Getting started
 
