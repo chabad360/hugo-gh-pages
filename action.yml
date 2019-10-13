@@ -12,7 +12,7 @@ inputs:
     required: false
 
   branch:
-    description: 'The branch to push the built site to (if it's not gh-pages).'
+    description: 'The branch to push the built site to'
     required: false
     default: 'gh-pages'
 
