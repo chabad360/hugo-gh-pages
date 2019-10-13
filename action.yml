@@ -3,15 +3,15 @@ author: 'chabad360'
 description: 'GitHub Action for Building a Hugo Site and Pushing it to Github Pages'
 
 inputs:
-  GITHUB_TOKEN:
+  githubToken:
     description: 'Github Personal Access Token with Repo permissions'
     required: true
 
-  CNAME:
+  cname:
     description: 'The custom domain name for your GH Pages Site'
     required: false
 
-  BRANCH:
+  branch:
     description: 'The branch to push the built site to (if it's not gh-pages).'
     required: false
     default: 'gh-pages'
@@ -19,6 +19,10 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - '--gc'
+    - '--minify'
+    - '--cleanDestinationDir'
 
 branding:
   icon: 'upload-cloud'  

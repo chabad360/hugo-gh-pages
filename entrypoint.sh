@@ -14,8 +14,6 @@ fi
 [ -z "${INPUT_GITHUB_TOKEN}" ] && \
   (echo -e "\n${BOLD}ERROR: Missing GITHUB_TOKEN.${PLAIN}" ; exit 1)
 
-[ -z "${INPUT_BRANCH}" ] && \
-  INPUT_BRANCH=gh-pages
 
 echo -e "\n${BOLD}Versions:${PLAIN}"
 echo -ne "${BOLD}Hugo: ${PLAIN}"
@@ -46,7 +44,7 @@ rm -rf /tmp/gh-pages/*
 cp -a public/* /tmp/gh-pages/
 cd /tmp/gh-pages
 
-[ "${INPUT_CNAME}" ] && \
+[ -n "${INPUT_CNAME}" ] && \
   echo "${INPUT_CNAME}" > CNAME
 
 git add -A && git commit --allow-empty -am "Publishing Site ${NAME} at ${GITHUB_SHA} on $(date -u)"
