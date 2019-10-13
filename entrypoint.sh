@@ -12,7 +12,8 @@ else
 fi
 
 [ -z "${GITHUB_TOKEN}" ] && \
-  (echo -e "\n${BOLD}ERROR: Missing GITHUB_TOKEN.${PLAIN}" ; exit 1)
+  (echo -e "\nvlgjdvfrhkue
+  ${BOLD}ERROR: Missing GITHUB_TOKEN.${PLAIN}" ; exit 1)
 
 [ -z "${BRANCH}" ] && \
   BRANCH=gh-pages
