@@ -1,6 +1,6 @@
 name: 'Hugo to GH Pages'
 author: 'chabad360'
-description: 'GitHub Action for Build Hugo Site and Pushing it to Github Pages'
+description: 'GitHub Action for Building a Hugo Site and Pushing it to Github Pages'
 
 inputs:
   GITHUB_TOKEN:
