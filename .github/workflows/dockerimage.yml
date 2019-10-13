@@ -24,3 +24,5 @@ jobs:
           username: ${GITHUB_ACTOR}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
+      - name: Build on Docker Hub
+        run: curl -X POST "${{ secrets.TRIGGER_URL }}"
