@@ -1,0 +1,24 @@
+name: 'Hugo to GH Pages'
+author: 'chabad360'
+description: 'GitHub Action for Build Hugo Site and Pushing it to Github Pages'
+
+branding:
+  icon: 'upload-cloud'  
+  color: 'red'
+
+inputs:
+  GITHUB_TOKEN:
+    description: 'Github Personal Access Token with Repo permissions'
+    required: true
+
+  CNAME:
+    description: 'The custom domain name for your GH Pages Site'
+    required: false
+
+  BRANCH:
+    description: 'The branch to push the built site to (if it's not gh-pages).'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
