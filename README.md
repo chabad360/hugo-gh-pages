@@ -18,6 +18,8 @@
 
 </div>
 
+&nbsp;
+
 This Action builds your Hugo Site (using the latest Hugo Extended) and pushes it to Github Pages.
 
 This action also contains support for several Hugo Helpers:
