@@ -7,7 +7,9 @@ RUN apk add --update --no-cache ca-certificates openssl git && \
 RUN apk add --update --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing py-pygments asciidoctor npm py3-rst && \
   rm -rf /var/cache/apk/*
 
-RUN npm install -g postcss-cli
+RUN npm config set unsafe-perm true \
+    && npm install -g postcss-cli \
+    && npm config set unsafe-perm false
 
 RUN wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-linux.tar.gz && \
   tar xvzf pandoc-2.7.3-linux.tar.gz --strip-components 1 -C /usr/local && \
