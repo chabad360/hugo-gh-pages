@@ -77,7 +77,8 @@ To add to an already exsiting workflow, this is the section that matters:
 githubToken: ${{ secrets.PERSONAL_TOKEN }}
 # Required
 # A Github Personal Access Token with repo permissions.
-# Remember to set this as a secret (i.e. secrets.PERSONAL_TOKEN), and dont forget to set the secret in the project settings.
+# Remember to set this as a secret (i.e. secrets.PERSONAL_TOKEN).
+# Don't forget to set the secret in the project settings.
 ```
 
 ```yaml
