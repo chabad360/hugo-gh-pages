@@ -1,5 +1,3 @@
-# Build and Publish your Hugo Site to Github Pages
-
 <div align="center" >
   
   <img width=400  alt="Image Credit: Peaceiris" src="https://raw.githubusercontent.com/peaceiris/actions-hugo/master/images/ogp.svg?sanitize=true" />
@@ -7,7 +5,11 @@
   <p style="font-size:12px;" >
     Image Credit: <a href="https://github.com/peaceiris">Peaceiris</a> 
   </p>
-
+  
+  <h1>
+    Build and Publish your Hugo Site to Github Pages
+  </h1>
+  
   <h3>
     <a href="https://github.com/gohugoio/hugo">
       gohugoio/hugo: The world’s fastest framework for building websites.
