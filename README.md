@@ -1,6 +1,6 @@
 # Build and Publish your Hugo Site to Github Pages
 
-<div style="text-align:center;" >
+<div align="center" >
   
   <img width=400  alt="Image Credit: Peaceiris" src="https://raw.githubusercontent.com/peaceiris/actions-hugo/master/images/ogp.svg?sanitize=true" />
 
