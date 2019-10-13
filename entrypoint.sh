@@ -18,10 +18,15 @@ fi
   BRANCH=gh-pages
 
 echo -e "\n${BOLD}Versions${PLAIN}"
+echo -ne "\n${BOLD}Hugo:${PLAIN}"
 hugo version
+echo -ne "\n${BOLD}Pygments:${PLAIN}"
 pygmentize -V
+echo -ne "\n${BOLD}Asciidoctor:${PLAIN}"
 asciidoctor --version
+echo -ne "\n${BOLD}PostCSS:${PLAIN}"
 postcss --version
+echo -ne "\n${BOLD}Pandoc:${PLAIN}"
 pandoc -v
 
 echo -e "\n${BOLD}Generating Site ${NAME} at commit ${GITHUB_SHA}${PLAIN}"
