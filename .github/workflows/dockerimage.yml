@@ -1,0 +1,20 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - name: Publish to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: chabad360/hugo-gh-pages
+          username: ${GITHUB_ACTOR}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
