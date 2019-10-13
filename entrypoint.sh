@@ -21,7 +21,8 @@ echo -e "\n${BOLD}Versions${PLAIN}"
 hugo version
 pygmentize -V
 asciidoctor --version
-
+postcss --version
+pandoc -v
 
 echo -e "\n${BOLD}Generating Site ${NAME} at commit ${GITHUB_SHA}${PLAIN}"
 hugo "$@"
