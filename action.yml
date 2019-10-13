@@ -18,7 +18,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'chabad360/hugo-gh-pages/hugo:latest'
+  image: 'docker://chabad360/hugo'
   args:
     - '--gc'
     - '--minify'
