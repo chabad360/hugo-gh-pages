@@ -3,7 +3,7 @@
   <img width=400  alt="Image Credit: Peaceiris" src="https://raw.githubusercontent.com/peaceiris/actions-hugo/master/images/ogp.svg?sanitize=true" />
 
   <p style="font-size:12px;" >
-    Image Credit: <a href="https://github.com/peaceiris">Peaceiris</a> 
+    Image Credit: <a href="https://github.com/peaceiris">Peaceiris</a>
   </p>
   
   <h1>
@@ -26,11 +26,11 @@ This action also contains support for several Hugo Helpers:
 
 | Name | Support |
 | ---- | ------- |
-| reStructuredText | ✓ |
-| Pandoc | ✓ |
-| Asciidoctor | ✓ |
-| PostCSS | ✓ |
-| Pygments | ✓ |
+| reStructuredText |️ ✔ |
+| Pandoc | ✔ |
+| Asciidoctor | ✔ |
+| PostCSS | ✔ |
+| Pygments | ✔ |
 
 If your site requires the use of another externel helper, submit an issue and I'll try to add it.
 
@@ -48,7 +48,7 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repo
@@ -59,7 +59,7 @@ jobs:
       - name: Publish Site
         uses: chabad360/hugo-gh-pages@master
         with:
-          githubToken: ${{ secrets.PERSONAL_TOKEN }} # Requires a Github Personal Access Token (yes, you read correctly) with repo permissions.
+          githubToken: ${{ secrets.PERSONAL_TOKEN }}
 ```
 
 To add to an already exsiting workflow, this is the section that matters:
@@ -68,30 +68,30 @@ To add to an already exsiting workflow, this is the section that matters:
 - name: Publish Site
   uses: chabad360/hugo-gh-pages@master
   with:
-    githubToken: ${{ secrets.PERSONAL_TOKEN }} # Requires a Github Personal Access Token (yes, you read correctly) with repo permissions.
+    githubToken: ${{ secrets.PERSONAL_TOKEN }}
 ```
 
 ### Inputs
 
-```yaml
-githubToken: ${{ secrets.PERSONAL_TOKEN }}
-# Required
-# A Github Personal Access Token with repo permissions.
-# Remember to set this as a secret (i.e. secrets.PERSONAL_TOKEN).
-# Don't forget to set the secret in the project settings.
-```
+| Key |  Description | Required | Default |
+| --- | ----------- | -------- | ------- |
+| `githubToken` | A Github Personal Access Token with repo permissions. | ✔ | N/A |
+| `cname` | The custom domain name for your GH Pages Site. | ✘ | N/A
+| `branch` |  The branch to push the built site to. | ✘ | `gh-pages`|
+
+#### Example
 
 ```yaml
-cname: mysite.com # Or anything else
-# Optional
-# Use if you have a custom domain for your site
-```
-
-```yaml
-branch: master # or anything else
-# Optional
-# Default: gh-pages
-# Use if your site is not hosted on the gh-pages branch
+- name: Publish Site
+  uses: chabad360/hugo-gh-pages@master
+  with:
+    githubToken: ${{ secrets.PERSONAL_TOKEN }}
+    # Remember to set this as a secret (i.e. secrets.PERSONAL_TOKEN).
+    # Don't forget to set the secret value in the project settings.
+    cname: mysite.com # Or anything else
+    # Only use if you have a custom domain for your site.
+    branch: master # Or anything else
+    # Only use if your site is not hosted on the gh-pages branch.
 ```
 
 ## Credit

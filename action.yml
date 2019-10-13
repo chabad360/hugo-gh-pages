@@ -4,7 +4,7 @@ description: 'GitHub Action for Building a Hugo Site and Pushing it to Github Pa
 
 inputs:
   githubToken:
-    description: 'Github Personal Access Token with Repo permissions'
+    description: 'A Github Personal Access Token with Repo permissions'
     required: true
 
   cname:
