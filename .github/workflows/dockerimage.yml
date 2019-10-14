@@ -15,17 +15,9 @@ jobs:
  
     steps:
       - uses: actions/checkout@v1
-      
+
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag chabad360/hugo-gh-pages/hugo
-
-      - name: Publish to Github Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
-        with:
-          name: chabad360/hugo-gh-pages/hugo
-          username: ${GITHUB_ACTOR}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
 
       - name: Publish to Docker Registry
         uses: elgohr/Publish-Docker-Github-Action@master

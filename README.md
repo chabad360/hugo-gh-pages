@@ -32,7 +32,7 @@ This action also contains support for several Hugo Helpers:
 | PostCSS | ✔ |
 | Pygments | ✔ |
 
-If your site requires the use of another externel helper, submit an issue and I'll try to add it.
+If your site requires the use of another external helper, submit an issue and I'll try to add it.
 
 ## Getting started
 
