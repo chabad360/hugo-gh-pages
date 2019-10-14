@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag chabad360/hugo-gh-pages/hugo
+        run: docker build . --file Dockerfile --tag chabad360/hugo
 
       - name: Publish to Docker Registry
         uses: elgohr/Publish-Docker-Github-Action@master
