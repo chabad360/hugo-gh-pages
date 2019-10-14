@@ -19,9 +19,8 @@ jobs:
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag chabad360/hugo
 
+      - name: Login to Docker Hub
+        run: docker login --username=${{ secrets.DOCKER_USER }} --password=${{ secrets.DOCKER_TOKEN }}
+      
       - name: Publish to Docker Registry
-        uses: elgohr/Publish-Docker-Github-Action@master
-        with:
-          name: chabad360/hugo
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_TOKEN }}
+        run: docker push chabad360/hugo
