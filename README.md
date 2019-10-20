@@ -17,7 +17,7 @@
   </h3>
 
   <span>
-    <h2>
+    <h3>
     🚀
     <a href="https://github.com/chabad360/hugo-gh-pages/blob/master/LICENSE">
       <img alt="License" src="https://img.shields.io/github/license/chabad360/hugo-gh-pages.svg?style=for-the-badge" />
@@ -29,7 +29,7 @@
       <img alt="Release" src="https://img.shields.io/static/v1?label=&style=for-the-badge&logo=addthis&logoColor=white&message=Get+on+the+GH+Marketplace&color=green" />
     </a>
     🚀
-    </h2>
+    </h3>
   </span>
 </div>
 
