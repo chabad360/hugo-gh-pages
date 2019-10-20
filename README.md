@@ -7,12 +7,12 @@
   </p>
 
   <h1>
-    🚀 Build and Publish Your Hugo Site to GitHub Pages 🚀
+  Build and Publish Your Hugo Site to GitHub Pages
   </h1>
 
   <h3>
     <a href="https://github.com/gohugoio/hugo">
-      gohugoio/hugo: The world’s fastest framework for building websites.
+      🚀 gohugoio/hugo: The world’s fastest framework for building websites 🚀
     </a>
   </h3>
 
