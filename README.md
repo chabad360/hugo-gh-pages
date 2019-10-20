@@ -7,7 +7,7 @@
   </p>
 
   <h1>
-    Build and Publish your Hugo Site to Github Pages
+    Build and Publish your Hugo Site to GitHub Pages
   </h1>
 
   <h3>
@@ -22,7 +22,7 @@
 
 This Action builds your Hugo Site (using the latest Hugo Extended) and pushes it to Github Pages.
 
-This action also contains support for several Hugo Helpers:
+This action also contains support for several external Hugo Helpers:
 
 | Name | Support |
 | ---- | ------- |
@@ -36,7 +36,7 @@ If your site requires the use of another external helper, submit an issue and I'
 
 ## Getting started
 
-This is a basic `Yaml` workflow to get you started (for more information scroll down to [Inputs](#inputs)):
+This is a basic `workflow.yml` to get you started (for more information scroll down to [Inputs](#inputs)):
 
 ```yaml
 name: Publish Site
@@ -62,26 +62,17 @@ jobs:
           githubToken: ${{ secrets.PERSONAL_TOKEN }}
 ```
 
-To add to an already exsiting workflow, this is the section that matters:
-
-```yaml
-- name: Publish Site
-  uses: chabad360/hugo-gh-pages@master
-  with:
-    githubToken: ${{ secrets.PERSONAL_TOKEN }}
-```
-
 ### Inputs
 
 | Key |  Description | Required | Default |
 | --- | ----------- | -------- | ------- |
 | `githubToken` | A Github Personal Access Token with repo permissions. | ✔ | N/A |
-| `cname` | The custom domain name for your GH Pages Site. | ✘ | N/A |
-| `branch` |  The branch to push the built site to. | ✘ | `gh-pages`|
-| `repo` | The repository to push the built site to. | ✘ | The current repo |
-| `hugoVersion` | The version Hugo to use (append `extended_` to the beggining to use the extended version). | ✘ | Latest Hugo Extended |
+| `cname` | The custom domain name for your GH Pages Site. | ❌ | N/A |
+| `branch` |  The branch to push the built site to. | ❌ | `gh-pages`|
+| `repo` | The repository to push the built site to. | ❌ | The current repo |
+| `hugoVersion` | The version Hugo to use (append `extended_` to the beggining to use the extended version). | ❌ | Latest Hugo Extended |
 
-#### Example
+#### Usage
 
 ```yaml
 - name: Publish Site
@@ -91,11 +82,11 @@ To add to an already exsiting workflow, this is the section that matters:
     # Remember to set this as a secret (i.e. secrets.PERSONAL_TOKEN).
     # Don't forget to set the secret value in the project settings.
     cname: mysite.com # Or anything else
-    # Only use if you have a custom domain for your site.
+    # Use if you have a custom domain for your site.
     branch: master # Or anything else
-    # Only use if your site is not hosted on the gh-pages branch.
+    # Use if your site is not hosted on the gh-pages branch.
     repo: you/you.github.io
-    # Only use if your pushing to a different repo.
+    # Use if your pushing to a different repo.
     # Dont add ".git" to the end of the URL (youl'll get 404s).
     hugoVersion: extended_0.58.3
     # Use if your site requires a specific version of Hugo
@@ -104,4 +95,4 @@ To add to an already exsiting workflow, this is the section that matters:
 
 ## Credit
 
-This project is forked from [mattbailey/actions-hugo](github.com/mattbailey/actions-hugo)
+This project is based on [mattbailey/actions-hugo](https://github.com/mattbailey/actions-hugo)
