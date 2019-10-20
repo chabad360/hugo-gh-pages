@@ -7,7 +7,7 @@ BOLD='\033[1;37m'
 
 if [ "${INPUT_HUGOVERSION}" ]; then
   echo -e "\n${BOLD}Using hugo vesion ${INPUT_HUGOVERSION}.${PLAIN}"
-  wget "https://github.com/gohugoio/hugo/releases/download/v$(echo "${INPUT_HUGOVERSION}" | grep -o "#\.##\.#") /hugo_${INPUT_HUGOVERSION}_Linux-64bit.tar.gz"
+  wget "https://github.com/gohugoio/hugo/releases/download/v$(echo "${INPUT_HUGOVERSION}" | grep -o "#\.##\.#")/hugo_${INPUT_HUGOVERSION}_Linux-64bit.tar.gz"
   tar xzvf hugo*
   mv hugo /usr/bin/hugo
   rm hugo*
