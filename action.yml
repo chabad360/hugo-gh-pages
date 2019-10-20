@@ -15,6 +15,14 @@ inputs:
     description: 'The branch to push the built site to'
     required: false
     default: 'gh-pages'
+  
+  repo:
+    description: 'The repo to push the built site to'
+    required: false
+  
+  hugoVersion:
+    desription: 'The version of hugo to use'
+    required: false
 
 runs:
   using: 'docker'

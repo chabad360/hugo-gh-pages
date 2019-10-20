@@ -5,11 +5,22 @@ set -e
 PLAIN='\033[0m'
 BOLD='\033[1;37m'
 
+if [ "${INPUT_HUGOVERSION}" ]; then
+  wget "https://github.com/gohugoio/hugo/releases/download/v$(echo "${INPUT_HUGOVERSION}" | grep -o "#\.##\.#") /hugo_${INPUT_HUGOVERSION}_Linux-64bit.tar.gz"
+fi
+
 if [ "${INPUT_CNAME}" ]; then
   NAME=${INPUT_CNAME}
 else
   NAME=${GITHUB_REPOSITORY}
 fi
+
+if [ "${INPUT_REPO}" ]; then
+  REPO=${INPUT_REPO}
+else
+  REPO=${GITHUB_REPOSITORY}
+fi
+
 
 [ -z "${INPUT_GITHUBTOKEN}" ] && \
   (echo -e "\n${BOLD}ERROR: Missing githubToken.${PLAIN}" ; exit 1)
@@ -36,7 +47,7 @@ git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 echo "machine github.com login ${GITHUB_ACTOR} password ${INPUT_GITHUBTOKEN}" > ~/.netrc
 
-git clone --depth=1 --single-branch --branch "${INPUT_BRANCH}" "https://x-access-token:${INPUT_GITHUBTOKEN}@github.com/${GITHUB_REPOSITORY}.git" /tmp/gh-pages
+git clone --depth=1 --single-branch --branch "${INPUT_BRANCH}" "https://x-access-token:${INPUT_GITHUBTOKEN}@github.com/${REPO}.git" /tmp/gh-pages
 
 
 echo -e "\n${BOLD}Commiting${PLAIN}"
