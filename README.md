@@ -7,7 +7,7 @@
   </p>
 
   <h1>
-    Build and Publish your Hugo Site to GitHub Pages
+    🚀 Build and Publish your Hugo Site to GitHub Pages 🚀
   </h1>
 
   <h3>
@@ -16,6 +16,16 @@
     </a>
   </h3>
 
+  <span>
+    <a href="https://github.com/chabad360/hugo-gh-pages/blob/master/LICENSE">
+      <img alt="License" src="https://img.shields.io/github/license/chabad360/hugo-gh-pages.svg?style=for-the-badge" />
+    </a>
+    <a href="https://github.com/chabad360/hugo-gh-pages/releases/latest">
+      <img alt="Release" src="https://img.shields.io/github/release/chabad360/hugo-gh-pages.svg?style=for-the-badge" />
+    </a>
+    <a href="https://github.com/marketplace/actions/hugo-to-gh-pages">
+      <img alt="Release" src="https://img.shields.io/static/v1?label=&style=for-the-badge&logo=addthis&logoColor=white&message=Get+on+the+GH+Marketplace&color=green" />
+    </a>
 </div>
 
 &nbsp;
@@ -26,17 +36,17 @@ This action also contains support for several external Hugo Helpers:
 
 | Name | Support |
 | ---- | ------- |
-| reStructuredText |️ ✔ |
-| Pandoc | ✔ |
-| Asciidoctor | ✔ |
-| PostCSS | ✔ |
-| Pygments | ✔ |
+| reStructuredText |️ ✔️ |
+| Pandoc | ✔️ |
+| Asciidoctor | ✔️ |
+| PostCSS | ✔️ |
+| Pygments | ✔️ |
 
 If your site requires the use of another external helper, submit an issue and I'll try to add it.
 
-## Getting started
+## ⭐ Getting started
 
-This is a basic `workflow.yml` to get you started (for more information scroll down to [Inputs](#inputs)):
+This is a basic `workflow.yml` to get you started (for more information scroll down to [⭐ Inputs](#-inputs)):
 
 ```yaml
 name: Publish Site
@@ -62,11 +72,11 @@ jobs:
           githubToken: ${{ secrets.PERSONAL_TOKEN }}
 ```
 
-### Inputs
+### ⭐ Inputs
 
 | Key |  Description | Required | Default |
 | --- | ----------- | -------- | ------- |
-| `githubToken` | A Github Personal Access Token with repo permissions. | ✔ | N/A |
+| `githubToken` | A Github Personal Access Token with repo permissions. | ✔️ | N/A |
 | `cname` | The custom domain name for your GH Pages Site. | ❌ | N/A |
 | `branch` |  The branch to push the built site to. | ❌ | `gh-pages`|
 | `repo` | The repository to push the built site to. | ❌ | The current repo |
@@ -93,6 +103,6 @@ jobs:
     # Append "extended_" to the beggining to use Hugo Extended
 ```
 
-## Credit
+## ⭐ Credit
 
 This project is based on [mattbailey/actions-hugo](https://github.com/mattbailey/actions-hugo)
