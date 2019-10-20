@@ -1,38 +1,32 @@
 <div align="center" >
-
   <img width=400  alt="Image Credit: Peaceiris" src="https://raw.githubusercontent.com/peaceiris/actions-hugo/master/images/ogp.svg?sanitize=true" />
-
   <p style="font-size:12px;" >
     Image Credit: <a href="https://github.com/peaceiris">Peaceiris</a>
   </p>
-
   <h1>
   Build and Publish Your Hugo Site to GitHub Pages
   </h1>
-
   <h3>
     <a href="https://github.com/gohugoio/hugo">
       gohugoio/hugo: The world’s fastest framework for building websites
     </a>
   </h3>
-
   <span>
     <h3>
     🚀
     <a href="https://github.com/chabad360/hugo-gh-pages/blob/master/LICENSE">
       <img alt="License" src="https://img.shields.io/github/license/chabad360/hugo-gh-pages.svg?style=for-the-badge" />
     </a>
-    <a href="https://github.com/chabad360/hugo-gh-pages/releases/latest">
-      <img alt="Release" src="https://img.shields.io/github/release/chabad360/hugo-gh-pages.svg?style=for-the-badge" />
-    </a>
     <a href="https://github.com/marketplace/actions/hugo-to-gh-pages">
       <img alt="Release" src="https://img.shields.io/static/v1?label=&style=for-the-badge&logo=addthis&logoColor=white&message=Get+on+the+GH+Marketplace&color=green" />
+    </a>
+    <a href="https://github.com/chabad360/hugo-gh-pages/releases/latest">
+      <img alt="Release" src="https://img.shields.io/github/release/chabad360/hugo-gh-pages.svg?style=for-the-badge" />
     </a>
     🚀
     </h3>
   </span>
 </div>
-
 &nbsp;
 
 This action builds your Hugo Site (using the latest Hugo Extended) and pushes it to Github Pages.
@@ -72,7 +66,6 @@ jobs:
         uses: actions/checkout@master
         with:
           submodules: true
-
       - name: Publish Site
         uses: chabad360/hugo-gh-pages@master
         with:
@@ -87,7 +80,7 @@ jobs:
 | `cname` | The custom domain name for your GH Pages Site. | ❌ | N/A |
 | `branch` |  The branch to push the built site to. | ❌ | `gh-pages`|
 | `repo` | The repository to push the built site to. | ❌ | The current repo |
-| `hugoVersion` | The version Hugo to use (append `extended_` to the beggining to use the extended version). | ❌ | Latest Hugo Extended |
+| `hugoVersion` | The version Hugo to use (append `extended_` to the begining to use the extended version). | ❌ | Latest Hugo Extended |
 
 #### Usage
 
@@ -107,7 +100,7 @@ jobs:
     # Dont add ".git" to the end of the URL (youl'll get 404s).
     hugoVersion: extended_0.58.3
     # Use if your site requires a specific version of Hugo
-    # Append "extended_" to the beggining to use Hugo Extended
+    # Append "extended_" to the begining to use Hugo Extended
 ```
 
 ## ⭐ Credit
