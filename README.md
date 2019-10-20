@@ -7,7 +7,7 @@
   </p>
 
   <h1>
-    🚀 Build and Publish your Hugo Site to GitHub Pages 🚀
+    🚀 Build and Publish Your Hugo Site to GitHub Pages 🚀
   </h1>
 
   <h3>
@@ -26,16 +26,17 @@
     <a href="https://github.com/marketplace/actions/hugo-to-gh-pages">
       <img alt="Release" src="https://img.shields.io/static/v1?label=&style=for-the-badge&logo=addthis&logoColor=white&message=Get+on+the+GH+Marketplace&color=green" />
     </a>
+  </span>
 </div>
 
 &nbsp;
 
-This Action builds your Hugo Site (using the latest Hugo Extended) and pushes it to Github Pages.
+This action builds your Hugo Site (using the latest Hugo Extended) and pushes it to Github Pages.
 
 This action also contains support for several external Hugo Helpers:
 
 | Name | Support |
-| ---- | ------- |
+| ---- | :-----: |
 | reStructuredText |️ ✔️ |
 | Pandoc | ✔️ |
 | Asciidoctor | ✔️ |
@@ -43,6 +44,8 @@ This action also contains support for several external Hugo Helpers:
 | Pygments | ✔️ |
 
 If your site requires the use of another external helper, submit an issue and I'll try to add it.
+
+> ⚠️ Note: To use this action, you must have applied to the GitHub Actions public beta. You can apply [here](https://github.com/features/actions/signup/).
 
 ## ⭐ Getting started
 
@@ -75,7 +78,7 @@ jobs:
 ### ⭐ Inputs
 
 | Key |  Description | Required | Default |
-| --- | ----------- | -------- | ------- |
+| --- | ------------ | :------: | ------- |
 | `githubToken` | A Github Personal Access Token with repo permissions. | ✔️ | N/A |
 | `cname` | The custom domain name for your GH Pages Site. | ❌ | N/A |
 | `branch` |  The branch to push the built site to. | ❌ | `gh-pages`|
