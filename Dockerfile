@@ -20,4 +20,4 @@ WORKDIR /site
 
 VOLUME [ "/site" ]
 
-CMD [ "hugo", "-h" ]
+CMD [ "/usr/bin/hugo", "-h" ]
