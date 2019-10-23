@@ -8,11 +8,17 @@ RUN apk add --update --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/tes
   && rm -rf /var/cache/apk/* \
   && npm config set unsafe-perm true \
   && npm install -g postcss-cli \
-  && npm config set unsafe-perm false \
-  && wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-linux.tar.gz \
+  && npm config set unsafe-perm false
+
+RUN wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-linux.tar.gz \
   && tar xvzf pandoc-2.7.3-linux.tar.gz --strip-components 1 -C /usr/local \
   && rm pandoc-2.7.3-linux.tar.gz \
   && mkdir /site
+
+# HTMLProofer
+RUN apk add --update --no-cache ruby-dev build-base curl \
+  && gem install html-proofer \
+  && rm -rf /var/cache/apk/* 
 
 COPY ./entrypoint.sh /entrypoint.sh
 
