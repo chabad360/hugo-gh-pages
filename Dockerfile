@@ -14,12 +14,7 @@ RUN wget https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-linu
   && tar xvzf pandoc-2.7.3-linux.tar.gz --strip-components 1 -C /usr/local \
   && rm pandoc-2.7.3-linux.tar.gz \
   && mkdir /site
-
-# HTMLProofer
-RUN apk add --update --no-cache ruby-dev build-base curl \
-  && gem install html-proofer \
-  && rm -rf /var/cache/apk/* 
-
+  
 COPY ./entrypoint.sh /entrypoint.sh
 
 WORKDIR /site

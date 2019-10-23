@@ -29,7 +29,7 @@
 </div>
 &nbsp;
 
-This action builds your Hugo Site (using the latest Hugo Extended), tests the genertated HTML with [HTMLProofer](https://github.com/gjtorikian/html-proofer/) and pushes it to Github Pages.
+This action builds your Hugo Site (using the latest Hugo Extended) and pushes it to Github Pages.
 
 This action also contains support for several external Hugo Helpers:
 

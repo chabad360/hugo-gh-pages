@@ -42,8 +42,6 @@ echo -ne "${BOLD}PostCSS: ${PLAIN}"
 postcss --version
 echo -ne "${BOLD}Pandoc: ${PLAIN}"
 pandoc -v
-echo -ne "${BOLD}HTMLProofer: ${PLAIN}"
-htmlproofer --version
 
 
 echo -e "\n${BOLD}Setting up Git${PLAIN}"
@@ -57,10 +55,6 @@ rm -rf /tmp/gh-pages/*
 
 echo -e "\n${BOLD}Generating Site ${NAME} at commit ${GITHUB_SHA}${PLAIN}"
 hugo "$@" -d /tmp/gh-pages/
-
-
-echo -e "\n${BOLD}Testing HTML${PLAIN}"
-htmlproofer /tmp/gh-pages/
 
 
 echo -e "\n${BOLD}Commiting${PLAIN}"
