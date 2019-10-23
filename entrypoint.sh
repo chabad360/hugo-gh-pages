@@ -42,21 +42,18 @@ postcss --version
 echo -ne "${BOLD}Pandoc: ${PLAIN}"
 pandoc -v
 
-echo -e "\n${BOLD}Generating Site ${NAME} at commit ${GITHUB_SHA}${PLAIN}"
-hugo "$@"
-
-
 echo -e "\n${BOLD}Setting up Git${PLAIN}"
 git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 echo "machine github.com login ${GITHUB_ACTOR} password ${INPUT_GITHUBTOKEN}" > ~/.netrc
 
 git clone --depth=1 --single-branch --branch "${INPUT_BRANCH}" "https://x-access-token:${INPUT_GITHUBTOKEN}@github.com/${REPO}.git" /tmp/gh-pages
+rm -rf /tmp/gh-pages/*
 
+echo -e "\n${BOLD}Generating Site ${NAME} at commit ${GITHUB_SHA}${PLAIN}"
+hugo "$@" -d /tmp/gh-pages/
 
 echo -e "\n${BOLD}Commiting${PLAIN}"
-rm -rf /tmp/gh-pages/*
-cp -a public/* /tmp/gh-pages/
 cd /tmp/gh-pages
 
 [ -n "${INPUT_CNAME}" ] && \
