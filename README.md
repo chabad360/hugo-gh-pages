@@ -81,7 +81,7 @@ jobs:
 | `branch` |  The branch to push the built site to. | ❌ | `gh-pages`|
 | `repo` | The repository to push the built site to. | ❌ | The current repo |
 | `hugoVersion` | The version Hugo to use (append `extended_` to the begining to use the extended version). | ❌ | Latest Hugo Extended |
-
+| `args` | Arguments to pass to Hugo | ❌ | `--gc --minify --cleanDestinationDir`|
 #### Usage
 
 ```yaml
@@ -101,6 +101,11 @@ jobs:
     hugoVersion: extended_0.58.3
     # Use if your site requires a specific version of Hugo
     # Append "extended_" to the begining to use Hugo Extended
+    args:
+      - '--gc'
+      - '--minify'
+      - '--cleanDestinationDir'
+    # Use if you want to pass some custom arguments to Hugo
 ```
 
 ## ⭐ Credit

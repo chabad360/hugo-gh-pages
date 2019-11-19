@@ -21,17 +21,21 @@ inputs:
     required: false
   
   hugoVersion:
-    desription: 'The version of hugo to use'
+    description: 'The version of hugo to use'
     required: false
+
+  args:
+    description: 'Arguments to pass to Hugo'
+    required: false
+    default:
+      - '--gc'
+      - '--minify'
+      - '--cleanDestinationDir'
 
 runs:
   using: 'docker'
   image: 'docker://chabad360/hugo'
   entrypoint: '/entrypoint.sh'
-  args:
-    - '--gc'
-    - '--minify'
-    - '--cleanDestinationDir'
 
 branding:
   icon: 'upload-cloud'  

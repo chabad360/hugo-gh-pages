@@ -54,7 +54,7 @@ rm -rf /tmp/gh-pages/*
 
 
 echo -e "\n${BOLD}Generating Site ${NAME} at commit ${GITHUB_SHA}${PLAIN}"
-hugo "$@" -d /tmp/gh-pages/
+hugo ${INPUT_ARGS} -d /tmp/gh-pages/
 
 
 echo -e "\n${BOLD}Commiting${PLAIN}"
