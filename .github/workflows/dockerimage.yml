@@ -17,10 +17,10 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag chabad360/hugo
+        run: docker build . --file Dockerfile --tag docker.pkg.github.com/chabad360/hugo-gh-pages/hugo
 
       - name: Login to Docker Hub
-        run: docker login --username=${{ secrets.DOCKER_USER }} --password=${{ secrets.DOCKER_TOKEN }}
+        run: docker login docker.pkg.github.com --username=${{ secrets.DOCKER_USER }} --password=${{ secrets.GITHUB_TOKEN }}
       
       - name: Publish to Docker Registry
-        run: docker push chabad360/hugo
+        run: docker push docker.pkg.github.com/chabad360/hugo-gh-pages/hugo
