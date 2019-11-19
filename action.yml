@@ -34,8 +34,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://chabad360/hugo'
-  entrypoint: '/entrypoint.sh'
+  image: 'docker://docker.pkg.github.com/chabad360/hugo-gh-pages/hugo'
 
 branding:
   icon: 'upload-cloud'  
