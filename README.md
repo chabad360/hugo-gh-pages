@@ -45,6 +45,9 @@ If your site requires the use of another external helper, submit an issue and I'
 
 > ⚠️ Note: To use this action, you must have applied to the GitHub Actions public beta. You can apply [here](https://github.com/features/actions/signup/).
 
+This action is based on the Docker Image from [chabad360/hugo-actions](https://github.com/chabad360/hugo-actions).
+If you need to do post-build/pre-upload steps, use that action.
+
 ## ⭐ Getting started
 
 This is a basic `workflow.yml` to get you started (for more information scroll down to [⭐ Inputs](#-inputs)):
