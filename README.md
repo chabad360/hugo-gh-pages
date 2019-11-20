@@ -101,10 +101,7 @@ jobs:
     hugoVersion: extended_0.58.3
     # Use if your site requires a specific version of Hugo
     # Append "extended_" to the begining to use Hugo Extended
-    args:
-      - '--gc'
-      - '--minify'
-      - '--cleanDestinationDir'
+    args: --gc --minify --cleanDestinationDir
     # Use if you want to pass some custom arguments to Hugo
 ```
 

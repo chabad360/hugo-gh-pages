@@ -27,10 +27,7 @@ inputs:
   args:
     description: 'Arguments to pass to Hugo'
     required: false
-    default:
-      - '--gc'
-      - '--minify'
-      - '--cleanDestinationDir'
+    default: --gc --minify --cleanDestinationDir
 
 runs:
   using: 'docker'
