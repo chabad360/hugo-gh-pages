@@ -9,7 +9,7 @@ BOLD='\033[1;37m'
 if [ "${INPUT_HUGOVERSION}" ]; then
   echo -e "\n${BOLD}Using Hugo version ${INPUT_HUGOVERSION}.${PLAIN}"
   wget "https://github.com/gohugoio/hugo/releases/download/v$(echo "${INPUT_HUGOVERSION}" | grep -o  "[0-9]\+.[0-9]\+.[0-9]\+")/hugo_${INPUT_HUGOVERSION}_Linux-64bit.tar.gz"
-  tar xzvf hugo*
+  tar x -zvf hugo*
   mv hugo /usr/bin/hugo
   rm hugo*
 fi
