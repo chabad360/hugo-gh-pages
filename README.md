@@ -40,6 +40,7 @@ This action also contains support for several external Hugo Helpers:
 | Asciidoctor | ✔️ |
 | PostCSS | ✔️ |
 | Pygments | ✔️ |
+| Babel | ✔️ |
 
 If your site requires the use of another external helper, submit an issue and I'll try to add it.
 
