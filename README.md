@@ -86,6 +86,8 @@ jobs:
 | `repo` | The repository to push the built site to. | ❌ | The current repo |
 | `hugoVersion` | The version Hugo to use (append `extended_` to the begining to use the extended version). | ❌ | Latest Hugo Extended |
 | `args` | Arguments to pass to Hugo | ❌ | `--gc --minify --cleanDestinationDir`|
+| `siteDir` | Directory that your site is stored in. | ❌ | `/src`|
+
 #### Usage
 
 ```yaml
@@ -103,10 +105,12 @@ jobs:
     # Use if your pushing to a different repo.
     # Dont add ".git" to the end of the URL (youl'll get 404s).
     hugoVersion: extended_0.58.3
-    # Use if your site requires a specific version of Hugo
-    # Append "extended_" to the begining to use Hugo Extended
+    # Use if your site requires a specific version of Hugo.
+    # Append "extended_" to the begining to use Hugo Extended.
     args: --gc --minify --cleanDestinationDir
-    # Use if you want to pass some custom arguments to Hugo
+    # Use if you want to pass some custom arguments to Hugo.
+    siteDir: /src/site
+    # Use this if your site isn't in the root of your repo.
 ```
 
 ## ⭐ Credit
