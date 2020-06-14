@@ -28,6 +28,10 @@ inputs:
     description: 'Arguments to pass to Hugo'
     required: false
     default: --gc --minify --cleanDestinationDir
+    
+  sourceDir:
+    description: 'Directory for Hugo Site (if it's not the root of the repo)'
+    required: false
 
 runs:
   using: 'docker'
