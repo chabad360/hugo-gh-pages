@@ -30,7 +30,7 @@ inputs:
     default: --gc --minify --cleanDestinationDir
     
   siteDir:
-    description: 'Directory for Hugo Site (if it's not the root of the repo)'
+    description: "Directory for Hugo Site (if it's not the root of the repo)"
     required: false
 
 runs:
