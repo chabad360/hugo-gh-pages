@@ -27,7 +27,7 @@ else
   REPO=${GITHUB_REPOSITORY}
 fi
 
-CD=${INPUT_SOURCEDIR:=(pwd)}
+CD=${INPUT_SITEDIR:=(pwd)}
 
 [ -z "${INPUT_GITHUBTOKEN}" ] && \
   (echo -e "\n${BOLD}ERROR: Missing githubToken.${PLAIN}" ; exit 1)
