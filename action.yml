@@ -29,7 +29,7 @@ inputs:
     required: false
     default: --gc --minify --cleanDestinationDir
     
-  sourceDir:
+  siteDir:
     description: 'Directory for Hugo Site (if it's not the root of the repo)'
     required: false
 
