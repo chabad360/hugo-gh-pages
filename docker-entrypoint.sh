@@ -27,6 +27,8 @@ else
   REPO=${GITHUB_REPOSITORY}
 fi
 
+CD=${INPUT_SOURCEDIR:=(pwd)}
+
 [ -z "${INPUT_GITHUBTOKEN}" ] && \
   (echo -e "\n${BOLD}ERROR: Missing githubToken.${PLAIN}" ; exit 1)
 
@@ -56,6 +58,7 @@ rm -rf /tmp/gh-pages/*
 
 
 echo -e "\n${BOLD}Generating Site ${NAME} at commit ${GITHUB_SHA}${PLAIN}"
+cd ${CD}
 hugo ${INPUT_ARGS} -d /tmp/gh-pages/
 
 
