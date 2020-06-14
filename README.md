@@ -86,7 +86,7 @@ jobs:
 | `repo` | The repository to push the built site to. | ❌ | The current repo |
 | `hugoVersion` | The version Hugo to use (append `extended_` to the begining to use the extended version). | ❌ | Latest Hugo Extended |
 | `args` | Arguments to pass to Hugo | ❌ | `--gc --minify --cleanDestinationDir`|
-| `siteDir` | Directory that your site is stored in. | ❌ | `/src`|
+| `siteDir` | Directory that your site is stored in. | ❌ | `/github/workspace`|
 
 #### Usage
 
@@ -109,8 +109,9 @@ jobs:
     # Append "extended_" to the begining to use Hugo Extended.
     args: --gc --minify --cleanDestinationDir
     # Use if you want to pass some custom arguments to Hugo.
-    siteDir: /src/site
+    siteDir: /github/workspace/site
     # Use this if your site isn't in the root of your repo.
+    # The root of your repo can be found at /github/workspace
 ```
 
 ## ⭐ Credit
