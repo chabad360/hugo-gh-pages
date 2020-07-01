@@ -44,8 +44,6 @@ This action also contains support for several external Hugo Helpers:
 
 If your site requires the use of another external helper, submit an issue and I'll try to add it.
 
-> ⚠️ Note: To use this action, you must have applied to the GitHub Actions public beta. You can apply [here](https://github.com/features/actions/signup/).
-
 This action is based on the Docker Image from [chabad360/hugo-actions](https://github.com/chabad360/hugo-actions).
 If you need to do post-build/pre-upload steps, use that action.
 
