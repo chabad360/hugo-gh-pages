@@ -1,5 +1,5 @@
 <div align="center" >
-  <img width=400  alt="Image Credit: Peaceiris" src="https://raw.githubusercontent.com/peaceiris/actions-hugo/master/images/ogp.svg?sanitize=true" />
+  <img width=400  alt="Image Credit: Peaceiris" src="https://raw.githubusercontent.com/peaceiris/actions-hugo/main/images/ogp.svg?sanitize=true" />
   <p style="font-size:12px;" >
     Image Credit: <a href="https://github.com/peaceiris">Peaceiris</a>
   </p>
@@ -100,7 +100,7 @@ jobs:
     branch: master # Or anything else
     # Use if your site is not hosted on the gh-pages branch.
     repo: you/you.github.io
-    # Use if your pushing to a different repo.
+    # Use if you're pushing to a different repo.
     # Dont add ".git" to the end of the URL (youl'll get 404s).
     hugoVersion: extended_0.58.3
     # Use if your site requires a specific version of Hugo.
