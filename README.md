@@ -41,6 +41,7 @@ This action also contains support for several external Hugo Helpers:
 | PostCSS | ✔️ |
 | Pygments | ✔️ |
 | Babel | ✔️ |
+| Hugo Modules | ✔️ |
 
 If your site requires the use of another external helper, submit an issue and I'll try to add it.
 
