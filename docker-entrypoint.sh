@@ -59,6 +59,7 @@ rm -rf /tmp/gh-pages/*
 
 echo -e "\n${BOLD}Generating Site ${NAME} at commit ${GITHUB_SHA}${PLAIN}"
 cd ${CD}
+hugo mod get
 hugo ${INPUT_ARGS} -d /tmp/gh-pages/
 
 
