@@ -35,8 +35,8 @@ inputs:
 
 runs:
   using: 'docker'
-#  image: 'docker://docker.pkg.github.com/chabad360/hugo-gh-pages/hugo'
-  image: 'Dockerfile'
+  image: 'docker://docker.pkg.github.com/chabad360/hugo-gh-pages/hugo'
+#   image: 'Dockerfile'
 
 branding:
   icon: 'upload-cloud'  
