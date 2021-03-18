@@ -35,7 +35,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://docker.pkg.github.com/chabad360/hugo-gh-pages/hugo'
+  image: 'docker://ghcr.io/chabad360/hugo-gh-pages'
 #   image: 'Dockerfile'
 
 branding:
