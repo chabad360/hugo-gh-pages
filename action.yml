@@ -16,6 +16,10 @@ inputs:
     required: false
     default: 'gh-pages'
   
+  destinationDir:
+    description: 'The directory to push the built site to'
+    required: false
+
   repo:
     description: 'The repo to push the built site to'
     required: false

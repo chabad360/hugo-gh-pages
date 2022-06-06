@@ -27,6 +27,12 @@ else
   REPO=${GITHUB_REPOSITORY}
 fi
 
+if [ "${INPUT_DESTINATIONDIR}" ]; then
+  PUBLISH_DIRECTORY="${CLONE_DIRECTORY}/${INPUT_DESTINATIONDIR}"
+else
+  PUBLISH_DIRECTORY="${CLONE_DIRECTORY}"
+fi
+
 CD=${INPUT_SITEDIR:=$(pwd)}
 
 [ -z "${INPUT_GITHUBTOKEN}" ] && \
@@ -55,13 +61,13 @@ git config --global --add safe.directory "${GITHUB_WORKSPACE}"
 echo "machine github.com login ${GITHUB_ACTOR} password ${INPUT_GITHUBTOKEN}" > ~/.netrc
 
 git clone --depth=1 --single-branch --branch "${INPUT_BRANCH}" "https://x-access-token:${INPUT_GITHUBTOKEN}@github.com/${REPO}.git" $CLONE_DIRECTORY
-rm -rf "${CLONE_DIRECTORY}/*"
+rm -rf "${PUBLISH_DIRECTORY}/*"
 
 
 echo -e "\n${BOLD}Generating Site ${NAME} at commit ${GITHUB_SHA}${PLAIN}"
 cd ${CD}
 hugo mod get
-hugo ${INPUT_ARGS} -d "${CLONE_DIRECTORY}/"
+hugo ${INPUT_ARGS} -d "${PUBLISH_DIRECTORY}"
 
 
 echo -e "\n${BOLD}Commiting${PLAIN}"
