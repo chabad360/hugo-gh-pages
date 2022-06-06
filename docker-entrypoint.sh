@@ -4,7 +4,7 @@ set -e
 
 PLAIN='\033[0m'
 BOLD='\033[1;37m'
-
+CLONE_DIRECTORY="/tmp/gh-pages"
 
 if [ "${INPUT_HUGOVERSION}" ]; then
   echo -e "\n${BOLD}Using Hugo version ${INPUT_HUGOVERSION}.${PLAIN}"
@@ -54,18 +54,18 @@ git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 git config --global --add safe.directory "${GITHUB_WORKSPACE}"
 echo "machine github.com login ${GITHUB_ACTOR} password ${INPUT_GITHUBTOKEN}" > ~/.netrc
 
-git clone --depth=1 --single-branch --branch "${INPUT_BRANCH}" "https://x-access-token:${INPUT_GITHUBTOKEN}@github.com/${REPO}.git" /tmp/gh-pages
-rm -rf /tmp/gh-pages/*
+git clone --depth=1 --single-branch --branch "${INPUT_BRANCH}" "https://x-access-token:${INPUT_GITHUBTOKEN}@github.com/${REPO}.git" $CLONE_DIRECTORY
+rm -rf "${CLONE_DIRECTORY}/*"
 
 
 echo -e "\n${BOLD}Generating Site ${NAME} at commit ${GITHUB_SHA}${PLAIN}"
 cd ${CD}
 hugo mod get
-hugo ${INPUT_ARGS} -d /tmp/gh-pages/
+hugo ${INPUT_ARGS} -d "${CLONE_DIRECTORY}/"
 
 
 echo -e "\n${BOLD}Commiting${PLAIN}"
-cd /tmp/gh-pages
+cd $CLONE_DIRECTORY
 
 [ -n "${INPUT_CNAME}" ] && \
   echo "${INPUT_CNAME}" > CNAME
